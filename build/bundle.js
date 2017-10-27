@@ -172,7 +172,7 @@ var app = (0, _express2.default)();
 // Set up static assett path
 app.use(_express2.default.static('public'));
 
-app.get('*', function (req, res) {
+app.get('/', function (req, res) {
     var store = (0, _createStore2.default)();
 
     // Some logic about

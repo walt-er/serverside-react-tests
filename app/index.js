@@ -10,7 +10,7 @@ const app = express();
 // Set up static assett path
 app.use(express.static('public'));
 
-app.get('*', (req, res) => {
+app.get('/', (req, res) => {
     const store = createStore();
 
     // Some logic about
