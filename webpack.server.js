@@ -10,7 +10,7 @@ const config = {
     externals: [nodeExternals()],
 
     // Tell webpack root file of server application
-    entry: './public/bundle.js',
+    entry: './app/index.js',
 
     // Tell webpack where to output
     output: {
