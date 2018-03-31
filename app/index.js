@@ -1,6 +1,4 @@
-import 'babel-polyfill';
 import express from 'express';
-
 import renderer from './helpers/renderer';
 import createStore from './helpers/createStore';
 
@@ -8,7 +6,8 @@ import createStore from './helpers/createStore';
 const app = express();
 
 // Set up static assett path
-app.use(express.static('public'));
+app.set('port', (process.env.PORT || 5000))
+app.use(express.static(__dirname + '/public'));
 
 app.get('/', (req, res) => {
     const store = createStore();
@@ -19,6 +18,6 @@ app.get('/', (req, res) => {
     res.send(renderer(req, store));
 });
 
-app.listen(3000, () => {
-    console.log('Listening on port 3000');
+app.listen(app.get('port'), () => {
+    console.log(`App is running at localhost:${app.get('port')}`);
 });
