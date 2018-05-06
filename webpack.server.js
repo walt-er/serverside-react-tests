@@ -14,7 +14,7 @@ const config = {
 
     // Tell webpack where to output
     output: {
-        filename: 'bundle.js',
+        filename: 'server.js',
         path: path.resolve(__dirname, 'build')
     }
 };
