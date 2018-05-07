@@ -17,7 +17,7 @@
   "main": "app/index.js",
   "scripts": {
     "start": "node ./build/server.js",
-    "dev": "npm-run-all --parallel dev:*",
+    "dev": "npm run vet:dev && npm-run-all --parallel dev:*",
     "dev:server": "nodemon --watch build --exec \"node build/server.js\"",
     "dev:build-server": "webpack --config webpack.server.js --watch",
     "dev:build-client": "webpack --config webpack.client.js --watch",
@@ -29,9 +29,6 @@
     "stop": "sudo killall -9 node",
     "tkill": "taskkill /f /im node.exe"
   },
-  "pre-commit": [
-    "vet:dev"
-  ],
   "author": "",
   "dependencies": {
     "autoprefixer": "8.4.1",
@@ -66,7 +63,6 @@
     "postcss-cssnext": "3.1.0",
     "postcss-loader": "2.1.5",
     "postcss-reporter": "5.0.0",
-    "pre-commit": "1.2.2",
     "prop-types": "^15.6.1",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
